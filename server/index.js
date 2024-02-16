@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 const {getHouses,
         createHouse,
         deleteHouse,
-        updateHouse} = require('./controller')
+        updateHousegit } = require('./controller')
 
 app.get(`/api/houses`, getHouses)
 app.post(`/api/houses`, createHouse)
