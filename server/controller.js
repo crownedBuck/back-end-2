@@ -9,11 +9,13 @@ module.exports = {
         let {address, price, imageURL} = req.body
 
         let newHouse = {
-            id:globalId,
+            id: globalId,
             address,
             price,
             imageURL
         }
+
+        globalId++
 
         houses.push(newHouse)
         res.status(200).send(houses)

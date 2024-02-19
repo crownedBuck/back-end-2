@@ -1,7 +1,7 @@
 const housesContainer = document.querySelector('#houses-container');
 const form = document.querySelector('form');
 
-const baseURL = '/api/houses';
+const baseURL = 'http://localhost:4000/api/houses';
 
 const housesCallback = ({ data: houses }) => displayHouses(houses);
 const errCallback = err => console.log(err);
@@ -35,6 +35,8 @@ function createHouseCard(house) {
     const houseCard = document.createElement('div');
     houseCard.classList.add('house-card');
 
+    console.log(house)
+
     houseCard.innerHTML = `<img alt='house cover image' src=${house.imageURL} class="house-cover-image"/>
     <p class="address">${house.address}</p>
     <div class="btns-container">
@@ -58,4 +60,8 @@ function displayHouses(arr) {
 
 form.addEventListener('submit', submitHandler);
 
+console.log("before getAllHouses()")
+
 getAllHouses();
+
+console.log("after getAllHouses()")
